@@ -27,6 +27,7 @@ export function Register() {
             if (response.token) {
                 console.log('Token recebido:', response.token);
             } else {
+                // Handle case where token is not received
             }
         } catch (error) {
             setLoading(false);
@@ -36,26 +37,44 @@ export function Register() {
     return (
         <div style={{
             display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
+            justifyContent: 'flex-end', // Alinha o card à direita
+            alignItems: 'center', // Centraliza verticalmente
             height: '100vh',
-            backgroundColor: '#f0f0f0',
+            background: 'linear-gradient(to bottom, #B6DE83, #66bb6a)', // Fundo verde claro gradiente
+            fontFamily: 'Helvetica, Arial, sans-serif', // Fonte Helvetica
         }}>
             <Card
-                title="Cadastro"
                 style={{
-                    width: 400,
+                    width: 600,
+                    height: '100vh', // Faz o card preencher de cima a baixo
                     backgroundColor: '#ffffff',
-                    border: '1px solid #000',
-                    borderRadius: 10,
+                    border: 'none', // Remove as bordas visíveis
+                    borderRadius: 0, // Remove bordas arredondadas
+                    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', // Sombra para destacar o card
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center', // Centraliza o conteúdo verticalmente dentro do card
+                    alignItems: 'center', // Centraliza o conteúdo horizontalmente dentro do card
                 }}
                 headStyle={{
-                    fontSize: '20px',
+                    fontSize: '24px', // Aumenta o tamanho do título
                     fontWeight: 'bold',
                     color: '#000',
                     textAlign: 'center',
                 }}
             >
+                <h2 style={{
+                    fontSize: '24px', // Aumenta o tamanho do título
+                    fontWeight: 'bold',
+                    color: '#000',
+                    textAlign: 'center',
+                }}>Cadastro</h2>
+                <h3 style={{
+                    fontSize: '14px', // Subtítulo
+                    color: '#666',
+                    textAlign: 'center',
+                    marginBottom: '20px',
+                }}>Preencha os campos abaixo para se cadastrar</h3>
                 <Form
                     name="cadastro"
                     initialValues={{ remember: true }}
@@ -96,9 +115,10 @@ export function Register() {
                         <Input
                             placeholder="Nome"
                             style={{
-                                borderColor: '#000',
+                                border: 'none', // Remove as bordas
                                 color: '#000',
-                                backgroundColor: '#f9f9f9',
+                                backgroundColor: '#e0e0e0', // Cinza um pouco mais escuro que o branco
+                                boxShadow: 'none', // Remove as sombras
                             }}
                         />
                     </Form.Item>
@@ -110,9 +130,10 @@ export function Register() {
                         <Input
                             placeholder="Sobrenome"
                             style={{
-                                borderColor: '#000',
+                                border: 'none', // Remove as bordas
                                 color: '#000',
-                                backgroundColor: '#f9f9f9',
+                                backgroundColor: '#e0e0e0', // Cinza um pouco mais escuro que o branco
+                                boxShadow: 'none', // Remove as sombras
                             }}
                         />
                     </Form.Item>
@@ -124,9 +145,10 @@ export function Register() {
                         <Input
                             placeholder="Email"
                             style={{
-                                borderColor: '#000',
+                                border: 'none', // Remove as bordas
                                 color: '#000',
-                                backgroundColor: '#f9f9f9',
+                                backgroundColor: '#e0e0e0', // Cinza um pouco mais escuro que o branco
+                                boxShadow: 'none', // Remove as sombras
                             }}
                         />
                     </Form.Item>
@@ -138,9 +160,10 @@ export function Register() {
                         <Input.Password
                             placeholder="Senha"
                             style={{
-                                borderColor: '#000',
+                                border: 'none', // Remove as bordas
                                 color: '#000',
-                                backgroundColor: '#f9f9f9',
+                                backgroundColor: '#e0e0e0', // Cinza um pouco mais escuro que o branco
+                                boxShadow: 'none', // Remove as sombras
                             }}
                         />
                     </Form.Item>
@@ -162,43 +185,45 @@ export function Register() {
                         <Input.Password
                             placeholder="Confirmar Senha"
                             style={{
-                                borderColor: '#000',
+                                border: 'none', // Remove as bordas
                                 color: '#000',
-                                backgroundColor: '#f9f9f9',
+                                backgroundColor: '#e0e0e0', // Cinza um pouco mais escuro que o branco
+                                boxShadow: 'none', // Remove as sombras
                             }}
                         />
                     </Form.Item>
 
                     <Form.Item>
-                        <Button
-                            type="primary"
-                            htmlType="submit"
-                            loading={loading}
-                            block
-                            style={{
-                                backgroundColor: '#000',
-                                borderColor: '#000',
-                                color: '#fff',
-                            }}
-                        >
-                            Cadastrar
-                        </Button>
+                        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                            <Button
+                                type="primary"
+                                htmlType="submit"
+                                loading={loading}
+                                style={{
+                                    backgroundColor: '#B6DE83', // Cor verde claro
+                                    borderColor: '#B6DE83',
+                                    color: '#000',
+                                    width: '48%', // Ajusta a largura para caber dois botões lado a lado
+                                }}
+                            >
+                                Cadastrar
+                            </Button>
+                            <Button
+                                type="primary"
+                                loading={loading}
+                                onClick={() => window.location.href = '/login'}
+                                style={{
+                                    backgroundColor: '#B6DE83', // Cor verde claro
+                                    borderColor: '#B6DE83',
+                                    color: '#000',
+                                    width: '48%', // Ajusta a largura para caber dois botões lado a lado
+                                }}
+                            >
+                                Login
+                            </Button>
+                        </div>
                     </Form.Item>
                 </Form>
-                <Button
-                    type="primary"
-                    htmlType="submit"
-                    loading={loading}
-                    block
-                    onClick={() => window.location.href = '/login'}
-                    style={{
-                        backgroundColor: '#000',
-                        borderColor: '#000',
-                        color: '#fff',
-                    }}
-                >
-                    Login
-                </Button>
             </Card>
         </div>
     );
