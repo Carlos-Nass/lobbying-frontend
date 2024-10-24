@@ -3,7 +3,7 @@ import { Button, Form, Input, Card, Alert, Image } from 'antd';
 import { apiRequest } from '../utils/apiRequest.ts';
 import { useNavigate } from 'react-router-dom';
 import { useUser } from '../context/UserContext.tsx';
-import loginImage from '../assets/login-image.jpg';
+import loginImage from '../assets/login-image.png';
 
 export function Login() {
 
