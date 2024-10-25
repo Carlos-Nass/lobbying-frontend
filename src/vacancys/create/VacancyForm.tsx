@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Form, Input, Button, Select, DatePicker, message } from 'antd';
+import { Form, Input, Button, Select, message } from 'antd';
 
 const { Option } = Select;
 
@@ -38,7 +38,6 @@ export default function VacancyForm() {
         const payload = {
             title: values.title,
             description: values.description,
-            creationDate: values.creationDate.format('YYYY-MM-DD'),
             tagIds: values.tags.map(tagId => tagId),
             urlForm: values.urlForm
         };
@@ -63,47 +62,39 @@ export default function VacancyForm() {
     };
 
     return (
-        <div style={{ padding: '20px' }}>
+        <div style={{ padding: '20px', fontFamily: 'Poppins, Helvetica, sans-serif' }}>
             <h1>Cadastrar Vaga</h1>
-            <Form form={form} onFinish={onFinish} layout="vertical">
+            <Form form={form} onFinish={onFinish} layout="vertical" style={{ fontFamily: 'Poppins, Helvetica, sans-serif' }}>
                 <Form.Item
                     name="title"
-                    label="Título"
+                    label={<span style={{ fontFamily: 'Poppins, Helvetica, sans-serif'}}>Título</span>}
                     rules={[{ required: true, message: 'Por favor, insira o título da vaga!' }]}
                 >
-                    <Input />
+                    <Input style={{ fontFamily: 'Poppins, Helvetica, sans-serif' }} />
                 </Form.Item>
 
                 <Form.Item
                     name="description"
-                    label="Descrição"
+                    label={<span style={{ fontFamily: 'Poppins, Helvetica, sans-serif'}}>Descrição</span>}
                     rules={[{ required: true, message: 'Por favor, insira a descrição da vaga!' }]}
                 >
-                    <Input.TextArea rows={4} />
-                </Form.Item>
-
-                <Form.Item
-                    name="creationDate"
-                    label="Data de Criação"
-                    rules={[{ required: true, message: 'Por favor, selecione a data de criação!' }]}
-                >
-                    <DatePicker />
+                    <Input.TextArea rows={4} style={{ fontFamily: 'Poppins, Helvetica, sans-serif' }} />
                 </Form.Item>
 
                 <Form.Item
                     name="urlForm"
-                    label="Link de Cadastro"
+                    label={<span style={{ fontFamily: 'Poppins, Helvetica, sans-serif'}}>Link de Cadastro</span>}
                     rules={[{ required: true, message: 'Por favor, insira uma URL' }]}
                 >
-                    <Input />
+                    <Input style={{ fontFamily: 'Poppins, Helvetica, sans-serif' }} />
                 </Form.Item>
 
                 <Form.Item
                     name="tags"
-                    label="Tags"
+                    label={<span style={{ fontFamily: 'Poppins, Helvetica, sans-serif'}}>Tags</span>}
                     rules={[{ required: true, message: 'Por favor, selecione ao menos uma tag!' }]}
                 >
-                    <Select mode="multiple" placeholder="Selecione as tags">
+                    <Select mode="multiple" placeholder="Selecione as tags" style={{ fontFamily: 'Poppins, Helvetica, sans-serif' }}>
                         {tags.map(tag => (
                             <Option key={tag.id} value={tag.id}>
                                 {tag.name}
@@ -113,7 +104,7 @@ export default function VacancyForm() {
                 </Form.Item>
 
                 <Form.Item>
-                    <Button type="primary" htmlType="submit">
+                    <Button type="primary" htmlType="submit" style={{ backgroundColor: '#66bb6a', borderColor: '#66bb6a', fontFamily: 'Poppins, Helvetica, sans-serif' }}>
                         Cadastrar
                     </Button>
                 </Form.Item>

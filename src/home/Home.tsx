@@ -8,7 +8,7 @@ import logo from '../assets/login-image.png'; // Importe a imagem
 const { Sider, Content } = Layout;
 
 export function Home() {
-    const [currentComponent, setCurrentComponent] = useState("teste-de-personalidade");
+    const [currentComponent, setCurrentComponent] = useState("default");
     const user = JSON.parse(localStorage.getItem("user") || "{}");
     const role = Number(user.role);
     const isAdmin = role === 1;
@@ -32,36 +32,50 @@ export function Home() {
             case "cadastro-vagas":
                 return <VacancyForm />;
             default:
-                return <h2>Bem-vindo! Selecione um teste no menu.</h2>;
+                return (
+                    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%', fontFamily: 'Poppins, Helvetica, sans-serif' }}>
+                        <h2>Bem-vindo! Realize o teste de personalidade para ver as vagas disponíveis.</h2>
+                    </div>
+                );
         }
     };
 
     return (
         <Layout style={{ minHeight: '100vh', background: 'linear-gradient(to bottom, #B6DE83, #66bb6a)' }}>
-            <Sider width={200} style={{ background: '#66bb6a', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+            <Sider width={350} style={{ background: '#fff', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', borderRight: '3px solid #B6DE83' }}>
                 <div>
                     <div style={{ padding: '16px', textAlign: 'center' }}>
                         <Image
                             src={logo} // Use a imagem importada
                             alt="Logo"
                             preview={false} // Desativa o preview
-                            style={{ width: '100%', height: 'auto' }}
+                            style={{ width: '100%', height: 'auto', borderBottom: '1px solid #000' }}
                         />
                     </div>
                     <Menu
                         mode="inline"
                         selectedKeys={[currentComponent]}
-                        style={{ background: '#66bb6a', color: '#000' }}
+                        style={{ background: '#fff', color: '#000', fontFamily: 'Poppins, Helvetica, sans-serif' }}  // Fonte aplicada ao Menu
                         onClick={handleMenuClick}
                     >
-                        <Menu.Item key="teste-de-personalidade" style={{ background: currentComponent === "teste-de-personalidade" ? '#B6DE83' : 'inherit', color: '#000' }}>Teste de Personalidade</Menu.Item>
-                        <Menu.Item key="visualizar-vagas" style={{ background: currentComponent === "visualizar-vagas" ? '#B6DE83' : 'inherit', color: '#000' }}>Visualizar Vagas</Menu.Item>
-                        {isAdmin && <Menu.Item key="cadastro-vagas" style={{ background: currentComponent === "cadastro-vagas" ? '#B6DE83' : 'inherit', color: '#000' }}>Cadastrar Vagas</Menu.Item>}
+                        <Menu.Item key="teste-de-personalidade" style={{ background: currentComponent === "teste-de-personalidade" ? '#B6DE83' : 'inherit', color: '#000', fontFamily: 'Poppins, Helvetica, sans-serif' }}>
+                            Teste de Personalidade
+                        </Menu.Item>
+                        <Menu.Item key="visualizar-vagas" style={{ background: currentComponent === "visualizar-vagas" ? '#B6DE83' : 'inherit', color: '#000', fontFamily: 'Poppins, Helvetica, sans-serif' }}>
+                            Visualizar Vagas
+                        </Menu.Item>
+                        {isAdmin && (
+                            <Menu.Item key="cadastro-vagas" style={{ background: currentComponent === "cadastro-vagas" ? '#B6DE83' : 'inherit', color: '#000', fontFamily: 'Poppins, Helvetica, sans-serif' }}>
+                                Cadastrar Vagas
+                            </Menu.Item>
+                        )}
                     </Menu>
                 </div>
-                <Button onClick={logout} style={{ margin: '16px', backgroundColor: '#B6DE83', borderColor: '#B6DE83', color: '#000', alignSelf: 'flex-end' }}>
-                    Logout
-                </Button>
+                <div style={{ padding: '16px', position: 'absolute', bottom: '20px', width: '100%' }}>
+                    <Button onClick={logout} style={{ width: '90%', backgroundColor: '#B6DE83', borderColor: '#B6DE83', color: '#000', marginLeft: '5%', fontFamily: 'Poppins, Helvetica, sans-serif' }}>
+                        Logout
+                    </Button>
+                </div>
             </Sider>
             <Layout>
                 <Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>

@@ -62,39 +62,40 @@ export default function PersonalityTest() {
     };
 
     return (
-        <div style={{ padding: '20px' }}>
-            <Steps current={current} style={{ marginBottom: '20px' }}>
+        <div style={{ padding: '20px'}}>
+            <Steps current={current} style={{ marginBottom: '40px' }}>
                 {questions.map((_, index) => (
-                    <Step key={index} />
+                    <Step key={index} style={{ color: '#66bb6a', fontFamily: 'Poppins, Helvetica, sans-serif' }} />
                 ))}
             </Steps>
-
+    
             <Form form={form} onFinish={onFinish}>
-                <h3>{questions[current].question}</h3>
+                <h3 style={{ marginBottom: '24px', fontFamily: 'Poppins, Helvetica, sans-serif' }}>{questions[current].question}</h3>
                 <Form.Item
                     name={`question-${current}`}
                     rules={[{ required: true, message: 'Por favor, selecione uma opção!' }]}
+                    style={{ marginBottom: '24px' }}
                 >
                     <Radio.Group>
                         {questions[current].options.map((option, index) => (
-                            <Radio key={index} value={option}>{option}</Radio>
+                            <Radio key={index} value={option} style={{ display: 'block', marginBottom: '8px', fontFamily: 'Poppins, Helvetica, sans-serif'  }}>{option}</Radio>
                         ))}
                     </Radio.Group>
                 </Form.Item>
-
-                <div style={{ marginTop: '20px' }}>
+    
+                <div style={{ marginTop: '24px' }}>
                     {current < questions.length - 1 && (
-                        <Button type="primary" onClick={next}>
+                        <Button type="primary" onClick={next} style={{ backgroundColor: '#66bb6a', borderColor: '#66bb6a', marginRight: '8px', fontFamily: 'Poppins, Helvetica, sans-serif'  }}>
                             Próximo
                         </Button>
                     )}
                     {current === questions.length - 1 && (
-                        <Button type="primary" htmlType="submit">
+                        <Button type="primary" htmlType="submit" style={{ backgroundColor: '#66bb6a', borderColor: '#66bb6a', marginRight: '8px', fontFamily: 'Poppins, Helvetica, sans-serif'  }}>
                             Finalizar
                         </Button>
                     )}
                     {current > 0 && (
-                        <Button style={{ margin: '0 8px' }} onClick={prev}>
+                        <Button style={{ backgroundColor: '#fff', borderColor: '#B6DE83', fontFamily: 'Poppins, Helvetica, sans-serif'  }} onClick={prev}>
                             Anterior
                         </Button>
                     )}

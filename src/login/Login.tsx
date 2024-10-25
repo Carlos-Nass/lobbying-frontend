@@ -150,6 +150,7 @@ export function Login() {
                                 htmlType="submit"
                                 loading={loading}
                                 style={{
+                                    fontFamily: 'Poppins, Helvetica, sans-serif',
                                     backgroundColor: '#B6DE83', // Cor verde claro
                                     borderColor: '#B6DE83',
                                     color: '#000',
@@ -163,7 +164,8 @@ export function Login() {
                                 loading={loading}
                                 onClick={() => window.location.href = '/register'}
                                 style={{
-                                    backgroundColor: '#B6DE83', // Cor verde claro
+                                    fontFamily: 'Poppins, Helvetica, sans-serif',
+                                    backgroundColor: '#fff', // Cor verde claro
                                     borderColor: '#B6DE83',
                                     color: '#000',
                                     width: '48%', // Ajusta a largura para caber dois botões lado a lado
