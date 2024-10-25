@@ -3,6 +3,8 @@ import { Form, Input, Button, Select, message } from 'antd';
 
 const { Option } = Select;
 
+const BASE_URL = process.env.REACT_APP_BASE_URL;
+
 export default function VacancyForm() {
     const [tags, setTags] = useState<any[]>([]);
     const [form] = Form.useForm();
@@ -12,7 +14,7 @@ export default function VacancyForm() {
             try {
                 const token = localStorage.getItem('token');
 
-                const response = await fetch('http://localhost:8080/tag', {
+                const response = await fetch(BASE_URL + '/tag', {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
@@ -45,7 +47,7 @@ export default function VacancyForm() {
         const token = localStorage.getItem('token');
 
         try {
-            const response = await fetch('http://localhost:8080/vacancy', {
+            const response = await fetch(BASE_URL + '/vacancy', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

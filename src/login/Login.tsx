@@ -5,6 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import { useUser } from '../context/UserContext.tsx';
 import loginImage from '../assets/login-image.png';
 
+const BASE_URL = process.env.REACT_APP_BASE_URL;
+
 export function Login() {
 
     const { setUser, setToken } = useUser();
@@ -24,7 +26,7 @@ export function Login() {
         };
 
         try {
-            const response = await apiRequest('http://localhost:8080/user/auth/login', 'POST', data);
+            const response = await apiRequest(BASE_URL + '/user/auth/login', 'POST', data);
 
             setLoading(false);
 

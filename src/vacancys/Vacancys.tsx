@@ -3,6 +3,8 @@ import { Card, Pagination, Spin } from 'antd';
 
 const { Meta } = Card;
 
+const BASE_URL = process.env.REACT_APP_BASE_URL;
+
 export default function Vacancys() {
     const [vacancies, setVacancies] = useState<any[]>([]);
     const [loading, setLoading] = useState(true);
@@ -18,7 +20,7 @@ export default function Vacancys() {
                 const user: any = JSON.parse(localStorage.getItem('user') || '{}');
                 const userId = user.id;
 
-                const response = await fetch('http://localhost:8080/vacancy/load-vacancys-by-tags?userId=' + userId, {
+                const response = await fetch(BASE_URL + '/vacancy/load-vacancys-by-tags?userId=' + userId, {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
@@ -65,7 +67,7 @@ export default function Vacancys() {
                                     <div>
                                         <p>{vacancy.description}</p>
                                         <p style={{ fontSize: 10 }}>Tags: {vacancy.tags.map(tag => tag.label).join(', ')}</p>
-                                        <p>Data de Criação: {new Date(vacancy.createdAt).toLocaleDateString()}</p>
+                                        <p>Data de Criação: {vacancy.createdAt.split("-").reverse().join("/")}</p>
                                         <p>
                                             URL do Formulário:
                                             <a href={vacancy.urlForm} target="_blank" rel="noopener noreferrer">
