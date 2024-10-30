@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Button, Form, Input, Card, Alert } from 'antd';
 import { apiRequest } from '../utils/apiRequest.ts';
 
+const BASE_URL = process.env.REACT_APP_BASE_URL;
+
 export function Register() {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
@@ -20,14 +22,13 @@ export function Register() {
         };
 
         try {
-            const response = await apiRequest('http://localhost:8080/user/auth/register', 'POST', data);
+            const response = await apiRequest(BASE_URL +  '/user/auth/register', 'POST', data);
 
             setLoading(false);
 
             if (response.token) {
                 console.log('Token recebido:', response.token);
             } else {
-                // Handle case where token is not received
             }
         } catch (error) {
             setLoading(false);
