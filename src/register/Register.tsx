@@ -28,6 +28,7 @@ export function Register() {
 
             if (response.token) {
                 console.log('Token recebido:', response.token);
+                setSuccess(null)
             } else {
             }
         } catch (error) {
@@ -201,6 +202,7 @@ export function Register() {
                                 htmlType="submit"
                                 loading={loading}
                                 style={{
+                                    fontFamily: 'Poppins, Helvetica, sans-serif',
                                     backgroundColor: '#B6DE83', // Cor verde claro
                                     borderColor: '#B6DE83',
                                     color: '#000',
@@ -214,13 +216,14 @@ export function Register() {
                                 loading={loading}
                                 onClick={() => window.location.href = '/login'}
                                 style={{
-                                    backgroundColor: '#B6DE83', // Cor verde claro
+                                    fontFamily: 'Poppins, Helvetica, sans-serif',
+                                    backgroundColor: '#fff', // Cor verde claro
                                     borderColor: '#B6DE83',
                                     color: '#000',
                                     width: '48%', // Ajusta a largura para caber dois botões lado a lado
                                 }}
                             >
-                                Login
+                                Voltar
                             </Button>
                         </div>
                     </Form.Item>

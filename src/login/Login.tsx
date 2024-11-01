@@ -85,12 +85,14 @@ export function Login() {
                     }}
                 />
                 <h2 style={{
+                    fontFamily: 'Poppins, Helvetica, sans-serif',
                     fontSize: '24px', // Aumenta o tamanho do título
                     fontWeight: 'bold',
                     color: '#000',
                     textAlign: 'center',
                 }}>Fazer login</h2>
                 <h3 style={{
+                    fontFamily: 'Poppins, Helvetica, sans-serif',
                     fontSize: '14px', // Subtítulo
                     color: '#666',
                     textAlign: 'center',
