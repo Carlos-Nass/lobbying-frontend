@@ -59,7 +59,7 @@ export default function Vacancys() {
                         <Card
                             key={vacancy.id}
                             hoverable
-                            style={{ width: 330, borderColor: '#B6DE83', borderWidth: '2px', borderStyle: 'solid', fontFamily: 'Poppins, Helvetica, sans-serif' }}
+                            style={{ width: 400, borderColor: '#B6DE83', borderWidth: '2px', borderStyle: 'solid', fontFamily: 'Poppins, Helvetica, sans-serif' }}
                         >
                             <Meta
                                 title={vacancy.title}
