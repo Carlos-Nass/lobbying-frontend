@@ -1,20 +1,19 @@
-import React, { useEffect, useState } from 'react';
-import { Card, Pagination, Spin } from 'antd';
-
+import React, { useState, useEffect } from 'react';
+import { Card, Spin, Pagination } from 'antd';
 const { Meta } = Card;
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
-export default function Vacancys() {
-    const [vacancies, setVacancies] = useState<any[]>([]);
+const Vagas = () => {
     const [loading, setLoading] = useState(true);
+    const [vacancies, setVacancies] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
-    const [totalVacancies, setTotalVacancies] = useState(0);
-    const itemsPerPage = 20;
+    const itemsPerPage = 8;
 
     useEffect(() => {
         const fetchVacancies = async () => {
             setLoading(true);
+
             try {
                 const token = localStorage.getItem('token');
                 const user: any = JSON.parse(localStorage.getItem('user') || '{}');
@@ -31,7 +30,6 @@ export default function Vacancys() {
                 const data = await response.json();
 
                 setVacancies(data);
-                setTotalVacancies(data.length);
             } catch (error) {
                 console.error('Erro ao buscar vagas:', error);
             } finally {
@@ -46,7 +44,9 @@ export default function Vacancys() {
         setCurrentPage(page);
     };
 
-    const currentVacancies: any = vacancies?.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    const currentVacancies = vacancies.slice(startIndex, endIndex);
 
     return (
         <div style={{ padding: '20px', fontFamily: 'Poppins, Helvetica, sans-serif' }}>
@@ -55,7 +55,7 @@ export default function Vacancys() {
                 <Spin tip="Carregando..." />
             ) : (
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', fontFamily: 'Poppins, Helvetica, sans-serif' }}>
-                    {currentVacancies.map((vacancy) => (
+                    {currentVacancies.map((vacancy: any) => (
                         <Card
                             key={vacancy.id}
                             hoverable
@@ -84,10 +84,12 @@ export default function Vacancys() {
             <Pagination
                 current={currentPage}
                 pageSize={itemsPerPage}
-                total={totalVacancies}
+                total={vacancies.length}
                 onChange={handlePageChange}
-                style={{ marginTop: '20px'}}
+                style={{ marginTop: '20px' }}
             />
         </div>
     );
-}
+};
+
+export default Vagas;
