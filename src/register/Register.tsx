@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Form, Input, Card, Alert } from 'antd';
-import { apiRequest } from '../utils/apiRequest.ts';
+import { apiRequest } from '../utils/apiRequest';
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 

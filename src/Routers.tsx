@@ -1,9 +1,9 @@
 import React from 'react';
 import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
-import { Home } from './home/Home.tsx';
-import { Login } from './login/Login.tsx';
-import { Register } from './register/Register.tsx';
-import PrivateRoute from './PrivateRouter.tsx';
+import { Home } from './home/Home';
+import { Login } from './login/Login';
+import { Register } from './register/Register';
+import PrivateRoute from './PrivateRouter';
 
 export function Routers() {
 

@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { Button, Form, Input, Card, Alert, Image } from 'antd';
-import { apiRequest } from '../utils/apiRequest.ts';
+import { apiRequest } from '../utils/apiRequest';
 import { useNavigate } from 'react-router-dom';
-import { useUser } from '../context/UserContext.tsx';
-import loginImage from '../assets/login-image.png';
+import { useUser } from '../context/UserContext';
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
@@ -75,7 +74,7 @@ export function Login() {
                 }}
             >
                 <Image
-                    src={loginImage} // Use a imagem importada
+                    src={require('../assets/login-image.png')}
                     alt="Login Image"
                     preview={false} // Desativa o preview
                     style={{

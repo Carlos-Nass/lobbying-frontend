@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { Button, Layout, Menu, Image } from "antd";
-import PersonalityTest from "../personalityTEst/PersonalityTest.tsx";
-import VisualizarVagas from "../vacancys/Vacancys.tsx";
-import VacancyForm from "../vacancys/create/VacancyForm.tsx";
-import logo from '../assets/login-image.png'; // Importe a imagem
+import PersonalityTest from "../personalityTEst/PersonalityTest";
+import VisualizarVagas from "../vacancys/Vacancys";
+import VacancyForm from "../vacancys/create/VacancyForm";
 
 const { Sider, Content } = Layout;
 
@@ -46,16 +45,16 @@ export function Home() {
                 <div>
                     <div style={{ padding: '16px', textAlign: 'center' }}>
                         <Image
-                            src={logo} // Use a imagem importada
+                            src={require('../assets/login-image.png')}
                             alt="Logo"
-                            preview={false} // Desativa o preview
+                            preview={false}
                             style={{ width: '100%', height: 'auto', borderBottom: '1px solid #000' }}
                         />
                     </div>
                     <Menu
                         mode="inline"
                         selectedKeys={[currentComponent]}
-                        style={{ background: '#fff', color: '#000', fontFamily: 'Poppins, Helvetica, sans-serif' }}  // Fonte aplicada ao Menu
+                        style={{ background: '#fff', color: '#000', fontFamily: 'Poppins, Helvetica, sans-serif' }}
                         onClick={handleMenuClick}
                     >
                         <Menu.Item key="teste-de-personalidade" style={{ background: currentComponent === "teste-de-personalidade" ? '#B6DE83' : 'inherit', color: '#000', fontFamily: 'Poppins, Helvetica, sans-serif' }}>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Steps, Button, Form, Radio, message } from 'antd';
-import { questionsMock } from './Questions.ts';
+import { questionsMock } from './Questions';
 
 const { Step } = Steps;
 
