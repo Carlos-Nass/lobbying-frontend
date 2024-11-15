@@ -47,27 +47,27 @@ export function Login() {
     return (
         <div style={{
             display: 'flex',
-            justifyContent: 'flex-end', // Alinha o card à direita
-            alignItems: 'center', // Centraliza verticalmente
+            justifyContent: 'flex-end',
+            alignItems: 'center',
             height: '100vh',
-            background: 'linear-gradient(to bottom, #B6DE83, #66bb6a)', // Fundo verde claro gradiente
-            fontFamily: 'Helvetica, Arial, sans-serif', // Fonte Helvetica
+            background: 'linear-gradient(to bottom, #B6DE83, #66bb6a)',
+            fontFamily: 'Helvetica, Arial, sans-serif',
         }}>
             <Card
                 style={{
                     width: 600,
-                    height: '100vh', // Faz o card preencher de cima a baixo
+                    height: '100vh',
                     backgroundColor: '#ffffff',
-                    border: 'none', // Sem bordas visíveis
-                    borderRadius: 0, // Remove bordas arredondadas para preencher de cima a baixo
-                    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', // Sombra para destacar o card
+                    border: 'none',
+                    borderRadius: 0, 
+                    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
                     display: 'flex',
                     flexDirection: 'column',
-                    justifyContent: 'center', // Centraliza o conteúdo verticalmente dentro do card
-                    alignItems: 'center', // Centraliza o conteúdo horizontalmente dentro do card
+                    justifyContent: 'center',
+                    alignItems: 'center', 
                 }}
                 headStyle={{
-                    fontSize: '24px', // Aumenta o tamanho do título
+                    fontSize: '24px', 
                     fontWeight: 'bold',
                     color: '#000',
                     textAlign: 'center',
@@ -76,7 +76,7 @@ export function Login() {
                 <Image
                     src={require('../assets/login-image.png')}
                     alt="Login Image"
-                    preview={false} // Desativa o preview
+                    preview={false}
                     style={{
                         width: '100%',
                         height: 'auto',
@@ -85,14 +85,14 @@ export function Login() {
                 />
                 <h2 style={{
                     fontFamily: 'Poppins, Helvetica, sans-serif',
-                    fontSize: '24px', // Aumenta o tamanho do título
+                    fontSize: '24px',
                     fontWeight: 'bold',
                     color: '#000',
                     textAlign: 'center',
                 }}>Fazer login</h2>
                 <h3 style={{
                     fontFamily: 'Poppins, Helvetica, sans-serif',
-                    fontSize: '14px', // Subtítulo
+                    fontSize: '14px',
                     color: '#666',
                     textAlign: 'center',
                     marginBottom: '20px',
@@ -123,10 +123,10 @@ export function Login() {
                         <Input
                             placeholder="E-mail"
                             style={{
-                                border: 'none', // Remove as bordas
+                                border: 'none',
                                 color: '#000',
-                                backgroundColor: '#e0e0e0', // Cinza um pouco mais escuro que o branco
-                                boxShadow: 'none', // Remove as sombras
+                                backgroundColor: '#e0e0e0',
+                                boxShadow: 'none',
                             }}
                         />
                     </Form.Item>
@@ -138,10 +138,10 @@ export function Login() {
                         <Input.Password
                             placeholder="Senha"
                             style={{
-                                border: 'none', // Remove as bordas
+                                border: 'none',
                                 color: '#000',
-                                backgroundColor: '#e0e0e0', // Cinza um pouco mais escuro que o branco
-                                boxShadow: 'none', // Remove as sombras
+                                backgroundColor: '#e0e0e0',
+                                boxShadow: 'none',
                             }}
                         />
                     </Form.Item>
@@ -154,10 +154,10 @@ export function Login() {
                                 loading={loading}
                                 style={{
                                     fontFamily: 'Poppins, Helvetica, sans-serif',
-                                    backgroundColor: '#B6DE83', // Cor verde claro
+                                    backgroundColor: '#B6DE83',
                                     borderColor: '#B6DE83',
                                     color: '#000',
-                                    width: '48%', // Ajusta a largura para caber dois botões lado a lado
+                                    width: '48%',
                                 }}
                             >
                                 Entrar
@@ -168,10 +168,10 @@ export function Login() {
                                 onClick={() => window.location.href = '/register'}
                                 style={{
                                     fontFamily: 'Poppins, Helvetica, sans-serif',
-                                    backgroundColor: '#fff', // Cor verde claro
+                                    backgroundColor: '#fff',
                                     borderColor: '#B6DE83',
                                     color: '#000',
-                                    width: '48%', // Ajusta a largura para caber dois botões lado a lado
+                                    width: '48%',
                                 }}
                             >
                                 Cadastro

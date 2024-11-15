@@ -39,40 +39,40 @@ export function Register() {
     return (
         <div style={{
             display: 'flex',
-            justifyContent: 'flex-end', // Alinha o card à direita
-            alignItems: 'center', // Centraliza verticalmente
+            justifyContent: 'flex-end',
+            alignItems: 'center',
             height: '100vh',
-            background: 'linear-gradient(to bottom, #B6DE83, #66bb6a)', // Fundo verde claro gradiente
-            fontFamily: 'Helvetica, Arial, sans-serif', // Fonte Helvetica
+            background: 'linear-gradient(to bottom, #B6DE83, #66bb6a)', 
+            fontFamily: 'Helvetica, Arial, sans-serif',
         }}>
             <Card
                 style={{
                     width: 600,
-                    height: '100vh', // Faz o card preencher de cima a baixo
+                    height: '100vh',
                     backgroundColor: '#ffffff',
-                    border: 'none', // Remove as bordas visíveis
-                    borderRadius: 0, // Remove bordas arredondadas
-                    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', // Sombra para destacar o card
+                    border: 'none', 
+                    borderRadius: 0,
+                    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
                     display: 'flex',
                     flexDirection: 'column',
-                    justifyContent: 'center', // Centraliza o conteúdo verticalmente dentro do card
-                    alignItems: 'center', // Centraliza o conteúdo horizontalmente dentro do card
+                    justifyContent: 'center',
+                    alignItems: 'center',
                 }}
                 headStyle={{
-                    fontSize: '24px', // Aumenta o tamanho do título
+                    fontSize: '24px',
                     fontWeight: 'bold',
                     color: '#000',
                     textAlign: 'center',
                 }}
             >
                 <h2 style={{
-                    fontSize: '24px', // Aumenta o tamanho do título
+                    fontSize: '24px',
                     fontWeight: 'bold',
                     color: '#000',
                     textAlign: 'center',
                 }}>Cadastro</h2>
                 <h3 style={{
-                    fontSize: '14px', // Subtítulo
+                    fontSize: '14px',
                     color: '#666',
                     textAlign: 'center',
                     marginBottom: '20px',
@@ -117,10 +117,10 @@ export function Register() {
                         <Input
                             placeholder="Nome"
                             style={{
-                                border: 'none', // Remove as bordas
+                                border: 'none',
                                 color: '#000',
-                                backgroundColor: '#e0e0e0', // Cinza um pouco mais escuro que o branco
-                                boxShadow: 'none', // Remove as sombras
+                                backgroundColor: '#e0e0e0',
+                                boxShadow: 'none',
                             }}
                         />
                     </Form.Item>
@@ -132,10 +132,10 @@ export function Register() {
                         <Input
                             placeholder="Sobrenome"
                             style={{
-                                border: 'none', // Remove as bordas
+                                border: 'none',
                                 color: '#000',
-                                backgroundColor: '#e0e0e0', // Cinza um pouco mais escuro que o branco
-                                boxShadow: 'none', // Remove as sombras
+                                backgroundColor: '#e0e0e0',
+                                boxShadow: 'none',
                             }}
                         />
                     </Form.Item>
@@ -147,10 +147,10 @@ export function Register() {
                         <Input
                             placeholder="Email"
                             style={{
-                                border: 'none', // Remove as bordas
+                                border: 'none',
                                 color: '#000',
-                                backgroundColor: '#e0e0e0', // Cinza um pouco mais escuro que o branco
-                                boxShadow: 'none', // Remove as sombras
+                                backgroundColor: '#e0e0e0',
+                                boxShadow: 'none',
                             }}
                         />
                     </Form.Item>
@@ -162,10 +162,10 @@ export function Register() {
                         <Input.Password
                             placeholder="Senha"
                             style={{
-                                border: 'none', // Remove as bordas
+                                border: 'none',
                                 color: '#000',
-                                backgroundColor: '#e0e0e0', // Cinza um pouco mais escuro que o branco
-                                boxShadow: 'none', // Remove as sombras
+                                backgroundColor: '#e0e0e0',
+                                boxShadow: 'none',
                             }}
                         />
                     </Form.Item>
@@ -187,10 +187,10 @@ export function Register() {
                         <Input.Password
                             placeholder="Confirmar Senha"
                             style={{
-                                border: 'none', // Remove as bordas
+                                border: 'none',
                                 color: '#000',
-                                backgroundColor: '#e0e0e0', // Cinza um pouco mais escuro que o branco
-                                boxShadow: 'none', // Remove as sombras
+                                backgroundColor: '#e0e0e0',
+                                boxShadow: 'none',
                             }}
                         />
                     </Form.Item>
@@ -203,10 +203,10 @@ export function Register() {
                                 loading={loading}
                                 style={{
                                     fontFamily: 'Poppins, Helvetica, sans-serif',
-                                    backgroundColor: '#B6DE83', // Cor verde claro
+                                    backgroundColor: '#B6DE83',
                                     borderColor: '#B6DE83',
                                     color: '#000',
-                                    width: '48%', // Ajusta a largura para caber dois botões lado a lado
+                                    width: '48%',
                                 }}
                             >
                                 Cadastrar
@@ -217,10 +217,10 @@ export function Register() {
                                 onClick={() => window.location.href = '/login'}
                                 style={{
                                     fontFamily: 'Poppins, Helvetica, sans-serif',
-                                    backgroundColor: '#fff', // Cor verde claro
+                                    backgroundColor: '#fff',
                                     borderColor: '#B6DE83',
                                     color: '#000',
-                                    width: '48%', // Ajusta a largura para caber dois botões lado a lado
+                                    width: '48%', 
                                 }}
                             >
                                 Voltar
