@@ -1,4 +1,4 @@
-const { Routers } = require('./Routers');
+const { Routers } = require('../Routers');
 const { BrowserRouter, Routes, Route, Navigate } = require('react-router-dom');
 const { render } = require('@testing-library/react');
 

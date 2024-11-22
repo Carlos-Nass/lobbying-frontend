@@ -1,8 +1,8 @@
 const { useEffect } = require('react');
-const { useUser } = require('./context/UserContext');
-const { PrivateRoute } = require('./PrivateRouter');
+const { useUser } = require('../context/UserContext');
+const { PrivateRoute } = require('../PrivateRouter');
 
-jest.mock('./context/UserContext', () => ({
+jest.mock('../context/UserContext', () => ({
   useUser: jest.fn(),
 }));
 

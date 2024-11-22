@@ -15,7 +15,7 @@ jest.mock('react-router-dom', () => ({
     Navigate: jest.fn(),
 }));
 
-jest.mock('./Home', () => {
+jest.mock('../home/Home', () => {
     return jest.fn(() => null);
 });
 

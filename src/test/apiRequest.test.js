@@ -1,6 +1,6 @@
 const axios = require('axios');
 const MockAdapter = require('axios-mock-adapter');
-const { apiRequest } = require('./apiRequest');
+const { apiRequest } = require('../utils/apiRequest');
 
 describe('apiRequest', () => {
     let mock;
