@@ -1,7 +1,6 @@
 const { useEffect } = require('react');
 const { useUser } = require('./context/UserContext');
 const { PrivateRoute } = require('./PrivateRouter');
-const { Navigate } = require('react-router-dom');
 
 jest.mock('./context/UserContext', () => ({
   useUser: jest.fn(),
