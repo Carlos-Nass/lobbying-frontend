@@ -38,7 +38,6 @@ describe('UserProvider', () => {
             setToken: mockSetToken,
         };
 
-
         const { setToken } = mockContextValue;
         setToken('new-token');
 
